@@ -1,31 +1,34 @@
-# MemeLingo
+Для крутого README на GitHub важно не только описать, что делает код, но и показать стек, цели и то, как это запустить. Название MemeLand звучит отлично — это запоминается.
 
-Interactive web quiz for learning foreign languages using memes.
+Вот структурированный черновик для твоего репозитория:
+MemeLand 🧠🤡
 
-## Features
+MemeLand — это интерактивная веб-платформа для изучения иностранных языков через призму современной интернет-культуры. Забудь про скучные учебники: учи лексику, сленг и грамматику с помощью популярных мемов.
+🚀 Основная идея
 
-- User registration with difficulty levels (Beginner, Intermediate, Advanced)
-- Quiz with memes showing missing words
-- Error tracking and rehabilitation
-- Hints system with penalties
-- Statistics and progress tracking
-- Constructor for adding new memes
-- Progress dashboard
-- Session history
+Проект решает проблему скучного обучения. Мы используем мемы как контекстуальные подсказки. Пользователю нужно вставить пропущенное слово или исправить ошибку в подписи к мему. Если ты понимаешь шутку — ты понимаешь язык.
+✨ Основные возможности
 
-## Getting Started
+    Адаптивная сложность: Выбор уровня владения (Beginner, Intermediate, Advanced) при регистрации.
 
-1. Install dependencies: `npm install`
-2. Run development server: `npm run dev`
-3. Open [http://localhost:3000](http://localhost:3000)
+    Умная работа над ошибками:
 
-## Project Structure
+        Специальная вкладка «Ошибки» для повторения сложных моментов.
 
-- `app/` - Next.js app router pages (home, login, profile, quiz, constructor, progress, sessions)
-- `components/` - Reusable React components
-- `data/` - JSON data files for memes (moved to public/data/)
-- `public/` - Static assets and data
+        Интерактивные модальные окна для управления списком ревью.
 
-## Adding New Memes
+    Система подсказок: Возможность получить помощь в виде текстовой подсказки или аналогичного мема на родном языке.
 
-Use the constructor page to upload images and add correct words. The system will generate sentences and multiple choice options.
+    Геймификация: Система баллов (с учетом штрафов за подсказки) и подробная статистика в конце каждой сессии.
+
+    База знаний: Каталог из 200+ уникальных заданий, отобранных вручную (никаких бессмысленных мемов!).
+
+🛠 Технологический стек
+
+    Frontend: React / Next.js (Tailwind CSS для интерфейса).
+
+    Backend: Python (FastAPI) — для быстрой обработки данных.
+
+    Database: PostgreSQL / Supabase (хранение прогресса и личных словарей ошибок).
+
+    AI Integration: Локальные LLM для генерации контекстных подсказок.
