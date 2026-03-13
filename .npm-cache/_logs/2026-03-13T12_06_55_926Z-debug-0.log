@@ -1,0 +1,333 @@
+0 verbose cli /usr/bin/node /tmp/npm/package/bin/npm-cli.js
+1 info using npm@10.5.0
+2 info using node@v25.6.1
+3 timing npm:load:whichnode Completed in 2ms
+4 timing config:load:defaults Completed in 3ms
+5 timing config:load:file:/tmp/npm/package/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 5ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/home/fentyx/lingo/.npmrc Completed in 1ms
+10 timing config:load:project Completed in 2ms
+11 timing config:load:file:/home/fentyx/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/etc/npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 14ms
+17 timing npm:load:configload Completed in 14ms
+18 timing config:load:flatten Completed in 5ms
+19 timing npm:load:mkdirpcache Completed in 0ms
+20 timing npm:load:mkdirplogs Completed in 1ms
+21 verbose title npm install typescript @types/react @types/node
+22 verbose argv "install" "--cache" "/home/fentyx/lingo/.npm-cache" "--save-dev" "typescript" "@types/react" "@types/node"
+23 timing npm:load:setTitle Completed in 1ms
+24 timing npm:load:display Completed in 2ms
+25 verbose logfile logs-max:10 dir:/home/fentyx/lingo/.npm-cache/_logs/2026-03-13T12_06_55_926Z-
+26 verbose logfile /home/fentyx/lingo/.npm-cache/_logs/2026-03-13T12_06_55_926Z-debug-0.log
+27 timing npm:load:logFile Completed in 17ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 58ms
+31 timing arborist:ctor Completed in 1ms
+32 silly logfile done cleaning log files
+33 timing idealTree:init Completed in 60ms
+34 timing idealTree:userRequests Completed in 3ms
+35 silly idealTree buildDeps
+36 silly fetch manifest @types/node@^20
+37 timing arborist:ctor Completed in 0ms
+38 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 97ms (cache hit)
+39 silly fetch manifest @types/react@^18
+40 http fetch GET 200 https://registry.npmjs.org/@types%2freact 20ms (cache hit)
+41 silly fetch manifest typescript@^5
+42 http fetch GET 200 https://registry.npmjs.org/typescript 63ms (cache hit)
+43 silly placeDep ROOT @types/node@20.19.37 REPLACE for: memelingo@0.1.0 want: ^20
+44 silly placeDep ROOT @types/react@18.3.28 REPLACE for: memelingo@0.1.0 want: ^18
+45 silly placeDep ROOT typescript@5.9.3 REPLACE for: memelingo@0.1.0 want: ^5
+46 timing idealTree:#root Completed in 608ms
+47 timing idealTree:node_modules/@types/node Completed in 1ms
+48 timing idealTree:node_modules/@types/react Completed in 0ms
+49 timing idealTree:node_modules/typescript Completed in 0ms
+50 timing idealTree:buildDeps Completed in 611ms
+51 timing idealTree:fixDepFlags Completed in 2ms
+52 timing idealTree Completed in 679ms
+53 timing reify:loadTrees Completed in 682ms
+54 timing reify:diffTrees Completed in 4ms
+55 silly reify moves {}
+56 timing reify:retireShallow Completed in 1ms
+57 timing reify:createSparse Completed in 6ms
+58 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@types/prop-types' ]
+59 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@types/react-dom' ]
+60 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/csstype' ]
+61 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/undici-types' ]
+62 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@types/node' ]
+63 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@types/react' ]
+64 silly reify mark deleted [
+64 silly reify   '/home/fentyx/lingo/node_modules/typescript',
+64 silly reify   '/home/fentyx/lingo/node_modules/.bin/tsc',
+64 silly reify   '/home/fentyx/lingo/node_modules/.bin/tsserver'
+64 silly reify ]
+65 timing reify:trashOmits Completed in 2ms
+66 timing reify:loadBundles Completed in 0ms
+67 silly audit bulk request {
+67 silly audit   '@next/env': [ '14.2.0' ],
+67 silly audit   '@next/swc-darwin-arm64': [ '14.2.0' ],
+67 silly audit   '@next/swc-darwin-x64': [ '14.2.0' ],
+67 silly audit   '@next/swc-linux-arm64-gnu': [ '14.2.0' ],
+67 silly audit   '@next/swc-linux-arm64-musl': [ '14.2.0' ],
+67 silly audit   '@next/swc-linux-x64-gnu': [ '14.2.0' ],
+67 silly audit   '@next/swc-linux-x64-musl': [ '14.2.0' ],
+67 silly audit   '@next/swc-win32-arm64-msvc': [ '14.2.0' ],
+67 silly audit   '@next/swc-win32-ia32-msvc': [ '14.2.0' ],
+67 silly audit   '@next/swc-win32-x64-msvc': [ '14.2.0' ],
+67 silly audit   '@swc/counter': [ '0.1.3' ],
+67 silly audit   '@swc/helpers': [ '0.5.5' ],
+67 silly audit   busboy: [ '1.6.0' ],
+67 silly audit   'caniuse-lite': [ '1.0.30001778' ],
+67 silly audit   'client-only': [ '0.0.1' ],
+67 silly audit   'graceful-fs': [ '4.2.11' ],
+67 silly audit   'js-tokens': [ '4.0.0' ],
+67 silly audit   'loose-envify': [ '1.4.0' ],
+67 silly audit   nanoid: [ '3.3.11' ],
+67 silly audit   next: [ '14.2.0' ],
+67 silly audit   picocolors: [ '1.1.1' ],
+67 silly audit   postcss: [ '8.4.31' ],
+67 silly audit   react: [ '18.3.1' ],
+67 silly audit   'react-dom': [ '18.3.1' ],
+67 silly audit   scheduler: [ '0.23.2' ],
+67 silly audit   'source-map-js': [ '1.2.1' ],
+67 silly audit   streamsearch: [ '1.1.0' ],
+67 silly audit   'styled-jsx': [ '5.1.1' ],
+67 silly audit   tslib: [ '2.8.1' ]
+67 silly audit }
+68 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-win32-x64-msvc
+69 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-win32-x64-msvc' ]
+70 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-win32-ia32-msvc
+71 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-win32-ia32-msvc' ]
+72 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-win32-arm64-msvc
+73 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-win32-arm64-msvc' ]
+74 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-linux-arm64-musl
+75 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-linux-arm64-musl' ]
+76 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-linux-arm64-gnu
+77 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-linux-arm64-gnu' ]
+78 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-darwin-x64
+79 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-darwin-x64' ]
+80 verbose reify failed optional dependency /home/fentyx/lingo/node_modules/@next/swc-darwin-arm64
+81 silly reify mark deleted [ '/home/fentyx/lingo/node_modules/@next/swc-darwin-arm64' ]
+82 timing reifyNode:node_modules/@next/swc-win32-x64-msvc Completed in 41ms
+83 timing reifyNode:node_modules/@next/swc-win32-ia32-msvc Completed in 41ms
+84 timing reifyNode:node_modules/@next/swc-win32-arm64-msvc Completed in 40ms
+85 timing reifyNode:node_modules/@next/swc-linux-arm64-musl Completed in 41ms
+86 timing reifyNode:node_modules/@next/swc-linux-arm64-gnu Completed in 41ms
+87 timing reifyNode:node_modules/@next/swc-darwin-x64 Completed in 41ms
+88 timing reifyNode:node_modules/@next/swc-darwin-arm64 Completed in 40ms
+89 silly tarball no local data for @next/swc-linux-x64-musl@https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.2.0.tgz. Extracting by manifest.
+90 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 1504ms
+91 timing auditReport:getReport Completed in 1507ms
+92 silly audit report {
+92 silly audit report   next: [
+92 silly audit report     {
+92 silly audit report       id: 1099638,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-gp8f-8m3g-qvj9',
+92 silly audit report       title: 'Next.js Cache Poisoning',
+92 silly audit report       severity: 'high',
+92 silly audit report       vulnerable_versions: '>=14.0.0 <14.2.10',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1100421,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-g77x-44xx-532m',
+92 silly audit report       title: 'Denial of Service condition in Next.js image optimization',
+92 silly audit report       severity: 'moderate',
+92 silly audit report       vulnerable_versions: '>=10.0.0 <14.2.7',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1101438,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-7m27-7ghc-44w9',
+92 silly audit report       title: 'Next.js Allows a Denial of Service (DoS) with Server Actions',
+92 silly audit report       severity: 'moderate',
+92 silly audit report       vulnerable_versions: '>=14.0.0 <14.2.21',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1105461,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-3h52-269p-cp9r',
+92 silly audit report       title: 'Information exposure in Next.js dev server due to lack of origin verification',
+92 silly audit report       severity: 'low',
+92 silly audit report       vulnerable_versions: '>=13.0 <14.2.30',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1111391,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-mwv6-3258-q52c',
+92 silly audit report       title: 'Next Vulnerable to Denial of Service with Server Components',
+92 silly audit report       severity: 'high',
+92 silly audit report       vulnerable_versions: '>=13.3.0 <14.2.34',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1107226,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-g5qg-72qw-gw5v',
+92 silly audit report       title: 'Next.js Affected by Cache Key Confusion for Image Optimization API Routes',
+92 silly audit report       severity: 'moderate',
+92 silly audit report       vulnerable_versions: '>=0.9.9 <14.2.31',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1107420,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-7gfc-8cq8-jh5f',
+92 silly audit report       title: 'Next.js authorization bypass vulnerability',
+92 silly audit report       severity: 'high',
+92 silly audit report       vulnerable_versions: '>=9.5.5 <14.2.15',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1107512,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-4342-x723-ch2f',
+92 silly audit report       title: 'Next.js Improper Middleware Redirect Handling Leads to SSRF',
+92 silly audit report       severity: 'moderate',
+92 silly audit report       vulnerable_versions: '>=0.9.9 <14.2.32',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1107513,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-xv57-4mr9-wg8v',
+92 silly audit report       title: 'Next.js Content Injection Vulnerability for Image Optimization',
+92 silly audit report       severity: 'moderate',
+92 silly audit report       vulnerable_versions: '>=0.9.9 <14.2.31',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1112182,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-5j59-xgg2-r9c4',
+92 silly audit report       title: 'Next has a Denial of Service with Server Components - Incomplete Fix Follow-Up',
+92 silly audit report       severity: 'high',
+92 silly audit report       vulnerable_versions: '>=13.3.1-canary.0 <14.2.35',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1108291,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-qpjv-v59x-3qc4',
+92 silly audit report       title: 'Next.js Race Condition to Cache Poisoning',
+92 silly audit report       severity: 'low',
+92 silly audit report       vulnerable_versions: '>=0.9.9 <14.2.24',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1112593,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-9g9p-9gw9-jx7f',
+92 silly audit report       title: 'Next.js self-hosted applications vulnerable to DoS via Image Optimizer remotePatterns configuration',
+92 silly audit report       severity: 'moderate',
+92 silly audit report       vulnerable_versions: '>=10.0.0 <15.5.10',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1112653,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-h25m-26qc-wcjf',
+92 silly audit report       title: 'Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components',
+92 silly audit report       severity: 'high',
+92 silly audit report       vulnerable_versions: '>=13.0.0 <15.0.8',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     },
+92 silly audit report     {
+92 silly audit report       id: 1113689,
+92 silly audit report       url: 'https://github.com/advisories/GHSA-f82v-jwr5-mffw',
+92 silly audit report       title: 'Authorization Bypass in Next.js Middleware',
+92 silly audit report       severity: 'critical',
+92 silly audit report       vulnerable_versions: '>=14.0.0 <14.2.25',
+92 silly audit report       cwe: [Array],
+92 silly audit report       cvss: [Object]
+92 silly audit report     }
+92 silly audit report   ]
+92 silly audit report }
+93 timing metavuln:cache:get:security-advisory:next:A9m47VBQvL++V9EsVwBseCbPrOK9xk7oLIzrStyVB02IketEwhGsklFuhL1oaYPUn8YGmhlTxpFhF93K/Wfw5Q== Completed in 22ms
+94 timing metavuln:cache:get:security-advisory:next:d2hMvT1neRk1OILN6KsQ2L4sjWpIe19WxzSQJivjdzJVb/hhXgpN5SXMC++Yae4yKIQkpUsP465F2rfLyKo4PA== Completed in 22ms
+95 timing metavuln:cache:get:security-advisory:next:NpdQYf+4OaOvlNiZgkhHLNCcOTe84gjeay11sdJQ2HSe2hRovddeIJqZfGwiLh+ns7klO1J2oxhVS+ou+h9gmw== Completed in 24ms
+96 timing metavuln:cache:get:security-advisory:next:WrVaG6WkSvpCYPPQKNUv2SLuXz5XL9xKn9KHPtqw/Y+V4JFUbfvGu7iPZR/4d1/dHzlII2csAkP3UXbKSPpZTA== Completed in 25ms
+97 timing metavuln:cache:get:security-advisory:next:kXDE+ksbJYUI4TFImWPb/49o4hwXXT1nqPUeSTV/SE/IB3qFFazOXmXgn5PPbKkz9ewVGi6qMNNgGfrNX4hqIg== Completed in 27ms
+98 timing metavuln:cache:get:security-advisory:next:1RRZLAEdZ/XleXHoq279ILkZMiKyW77ZwtE5QzPtyre4x1QWgVmP0i9dSfz4gJebeiXjCYB49g8nOIfNiSjcYQ== Completed in 27ms
+99 timing metavuln:cache:get:security-advisory:next:WQCkHVGQkg6zsfYbmLOI+zBNEYhu4v1g6kXs5vVSFeehybhiXOKxuSPsV71Q4mBoY+gct03Ww794KjXwXHvGWA== Completed in 29ms
+100 timing metavuln:cache:get:security-advisory:next:+SMXIcdP7mb700j3lAUXRoUbwPUmDwsGMfkqi8EBxAInsFmBr7fDz7ceH3WCcBFoF44s9qJcAZp3YRfZSyk8qw== Completed in 30ms
+101 timing metavuln:cache:get:security-advisory:next:VmINk4sjQ5jqxRvJ2axYcaD3FqreNBMC4jAobfjDjUAn5dOOUzgsn/LLTyEYZvi7HDGR/ppGR9Jxp8UWVvHDIw== Completed in 32ms
+102 timing metavuln:cache:get:security-advisory:next:m1juSglhJQv6nr2Qd3fhaBRO3xSWDkIwePr5Y8MKgwiMDtGjVAtSoOHMXp3f9z6nPLepu8CsJK3YosBO7hEskA== Completed in 32ms
+103 timing metavuln:cache:get:security-advisory:next:3YEnowU0F/efIZFkDoFxQZjNq2qcmakBCRjEbrgPcrnqNOUxoJgvhg+PrXGQZbW/4yvsmMJX4gbpxuAhPD8bvg== Completed in 33ms
+104 timing metavuln:cache:get:security-advisory:next:owasql2RGfaRn6gCrEIYc1sLXkl1GuxqJbyX4pwqCr7f/tVRvnWuaIoanwkbKZ9RBWsvTnyiF9QrYyjzAdBqCg== Completed in 53ms
+105 timing metavuln:cache:get:security-advisory:next:ItJZ7qy1iUzxbodxayiejQRfV5cCQvX0fnpMwXLDBxbVruEW2O3qtQbmcGQKdCKBR49CjNmJDt46lWVTov1sQA== Completed in 54ms
+106 timing metavuln:cache:get:security-advisory:next:unIajp6lhtd8TlnbDyu03O9dAHAdyoPBnRJl7b7wYmHh7QTNefTOT1AH8NOkPJcV47ZUUiH1irG66Xfg+Lfo0g== Completed in 55ms
+107 http fetch GET 200 https://registry.npmjs.org/next 1551ms (cache miss)
+108 timing metavuln:packument:next Completed in 2148ms
+109 timing metavuln:load:security-advisory:next:1099638 Completed in 85ms
+110 timing metavuln:calculate:security-advisory:next:1099638 Completed in 2235ms
+111 timing metavuln:load:security-advisory:next:1100421 Completed in 88ms
+112 timing metavuln:calculate:security-advisory:next:1100421 Completed in 2321ms
+113 timing metavuln:load:security-advisory:next:1101438 Completed in 78ms
+114 timing metavuln:calculate:security-advisory:next:1101438 Completed in 2400ms
+115 timing metavuln:load:security-advisory:next:1105461 Completed in 96ms
+116 timing metavuln:calculate:security-advisory:next:1105461 Completed in 2496ms
+117 timing metavuln:load:security-advisory:next:1111391 Completed in 89ms
+118 timing metavuln:calculate:security-advisory:next:1111391 Completed in 2585ms
+119 timing metavuln:load:security-advisory:next:1107226 Completed in 101ms
+120 timing metavuln:calculate:security-advisory:next:1107226 Completed in 2685ms
+121 timing metavuln:load:security-advisory:next:1107420 Completed in 95ms
+122 timing metavuln:calculate:security-advisory:next:1107420 Completed in 2780ms
+123 timing metavuln:load:security-advisory:next:1107512 Completed in 90ms
+124 timing metavuln:calculate:security-advisory:next:1107512 Completed in 2871ms
+125 timing metavuln:load:security-advisory:next:1107513 Completed in 84ms
+126 timing metavuln:calculate:security-advisory:next:1107513 Completed in 2955ms
+127 timing metavuln:load:security-advisory:next:1112182 Completed in 85ms
+128 timing metavuln:calculate:security-advisory:next:1112182 Completed in 3040ms
+129 timing metavuln:load:security-advisory:next:1108291 Completed in 99ms
+130 timing metavuln:calculate:security-advisory:next:1108291 Completed in 3139ms
+131 timing metavuln:load:security-advisory:next:1112593 Completed in 102ms
+132 timing metavuln:calculate:security-advisory:next:1112593 Completed in 3241ms
+133 timing metavuln:load:security-advisory:next:1112653 Completed in 96ms
+134 timing metavuln:calculate:security-advisory:next:1112653 Completed in 3338ms
+135 timing metavuln:load:security-advisory:next:1113689 Completed in 82ms
+136 timing metavuln:calculate:security-advisory:next:1113689 Completed in 3420ms
+137 timing auditReport:init Completed in 3488ms
+138 timing reify:audit Completed in 4999ms
+139 http fetch GET 200 https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-14.2.0.tgz 31789ms (cache miss)
+140 timing reifyNode:node_modules/@next/swc-linux-x64-musl Completed in 31843ms
+141 timing reify:unpack Completed in 31845ms
+142 timing reify:unretire Completed in 1ms
+143 timing build:queue Completed in 2ms
+144 timing build:link Completed in 0ms
+145 timing build:deps Completed in 2ms
+146 timing build Completed in 2ms
+147 timing reify:build Completed in 2ms
+148 timing reify:trash Completed in 2ms
+149 timing reify:save Completed in 31ms
+150 timing reify Completed in 32609ms
+151 silly ADD
+152 silly ADD
+153 silly ADD
+154 silly ADD
+155 silly ADD
+156 silly ADD
+157 silly ADD
+158 silly ADD
+159 silly ADD
+160 silly ADD
+161 silly ADD node_modules/@next/swc-linux-x64-musl
+162 silly ADD
+163 silly ADD
+164 silly ADD
+165 silly ADD
+166 timing command:install Completed in 32894ms
+167 verbose exit 0
+168 timing npm Completed in 33254ms
+169 info ok
