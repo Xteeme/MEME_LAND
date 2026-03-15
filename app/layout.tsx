@@ -887,6 +887,19 @@ label {
     flex-shrink: 0;
   }
   
+  /* Mobile Menu Styles */
+  .desktop-menu {
+    display: flex !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none !important;
+  }
+  
+  .mobile-menu {
+    display: none !important;
+  }
+}
   /* Fix flex containers */
   .flex,
   [style*="display: flex"] {
@@ -899,6 +912,31 @@ label {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     max-width: 100% !important;
+  }
+  
+  /* Mobile Menu - Show hamburger on mobile */
+  .desktop-menu {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+  }
+  
+  .mobile-menu {
+    display: flex !important;
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

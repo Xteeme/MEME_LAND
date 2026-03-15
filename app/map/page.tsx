@@ -32,6 +32,7 @@ export default function MapPage() {
   const router = useRouter()
   const [user, setUser] = useState<User | null>(null)
   const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([])
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   // Sample levels - will be expanded later with actual quizzes
   const [levels, setLevels] = useState<Level[]>([
@@ -141,7 +142,9 @@ export default function MapPage() {
             style={{ maxWidth: '100%', height: 'auto' }}
           />
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+        
+        {/* Desktop Menu */}
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }} className="desktop-menu">
           <Link href="/survival" className="glow-btn glow-btn-red">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -179,7 +182,84 @@ export default function MapPage() {
             <span>Выйти</span>
           </button>
         </div>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="mobile-menu-btn"
+          style={{
+            display: 'none',
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '0.5rem',
+            zIndex: 101
+          }}
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            {isMenuOpen ? (
+              <><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></>
+            ) : (
+              <><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></>
+            )}
+          </svg>
+        </button>
       </div>
+      
+      {/* Mobile Dropdown Menu */}
+      {isMenuOpen && (
+        <div style={{
+          position: 'fixed',
+          top: '60px',
+          left: 0,
+          right: 0,
+          background: '#37464f',
+          boxShadow: '0 4px 0 #202f36',
+          zIndex: 99,
+          padding: '1rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.75rem',
+          borderBottom: '2px solid #8b5cf6'
+        }} className="mobile-menu">
+          <Link href="/survival" className="glow-btn glow-btn-red" style={{ justifyContent: 'center' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>Выживание</span>
+          </Link>
+          <Link href="/dictionary" className="glow-btn glow-btn-green" style={{ justifyContent: 'center' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <span>Словарь</span>
+          </Link>
+          <Link href="/errors" className="glow-btn glow-btn-orange" style={{ justifyContent: 'center' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>Ошибки</span>
+          </Link>
+          <Link href="/profile" className="glow-btn glow-btn-white" style={{ justifyContent: 'center' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Профиль</span>
+          </Link>
+          <button onClick={logout} className="glow-btn" style={{ justifyContent: 'center' }}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span>Выйти</span>
+          </button>
+        </div>
+      )}
 
       <main className="container" style={{ paddingTop: '6rem', minHeight: '100vh', display: 'flex', gap: '2rem', alignItems: 'center', justifyContent: 'center' }}>
         {/* Main Card with Map */}
