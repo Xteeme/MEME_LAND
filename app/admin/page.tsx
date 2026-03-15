@@ -18,9 +18,11 @@ export default function AdminPage() {
   const [users, setUsers] = useState<User[]>([])
   const [currentUser, setCurrentUser] = useState<User | null>(null)
   const [message, setMessage] = useState('')
+  const [isClient, setIsClient] = useState(false)
 
-  // Check admin access
+  // Check admin access and load data only on client
   useEffect(() => {
+    setIsClient(true)
     const userData = localStorage.getItem('currentUser')
     if (!userData) {
       router.push('/login')
@@ -32,17 +34,16 @@ export default function AdminPage() {
       return
     }
     setCurrentUser(user)
-  }, [router])
 
-  // Load users
-  useEffect(() => {
+    // Load users
     const usersData = localStorage.getItem('users')
     if (usersData) {
       setUsers(JSON.parse(usersData))
     }
-  }, [])
+  }, [router])
 
   const deleteUser = (username: string) => {
+    if (!isClient) return
     if (username === 'admin') {
       setMessage('Нельзя удалить администратора!')
       setTimeout(() => setMessage(''), 3000)
@@ -57,6 +58,7 @@ export default function AdminPage() {
   }
 
   const resetUserPassword = (username: string) => {
+    if (!isClient) return
     const newPassword = prompt(`Введите новый пароль для ${username}:`)
     if (!newPassword || newPassword.length < 4) {
       setMessage('Пароль должен быть минимум 4 символа')
@@ -74,6 +76,7 @@ export default function AdminPage() {
   }
 
   const changeUserLevel = (username: string, newLevel: string) => {
+    if (!isClient) return
     const updatedUsers = users.map(u => 
       u.username === username ? { ...u, level: newLevel } : u
     )
@@ -84,11 +87,13 @@ export default function AdminPage() {
   }
 
   const logout = () => {
+    if (!isClient) return
     localStorage.removeItem('currentUser')
     router.push('/login')
   }
 
   const getStats = () => {
+    if (!isClient) return { sessionsCount: 0, correct: 0, incorrect: 0, hints: 0, score: 0 }
     const sessions = JSON.parse(localStorage.getItem('sessions') || '[]')
     const totalStats = JSON.parse(localStorage.getItem('totalStats') || '{"correct":0,"incorrect":0,"hints":0,"score":0}')
     return { sessionsCount: sessions.length, ...totalStats }
