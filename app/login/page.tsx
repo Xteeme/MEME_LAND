@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 import Image from 'next/image'
 
 interface User {
@@ -66,7 +65,7 @@ export default function LoginPage() {
       }
       
       localStorage.setItem('currentUser', JSON.stringify(user))
-      router.push(user.isAdmin ? '/admin' : '/quiz')
+      router.push(user.isAdmin ? '/admin' : '/map')
     } else {
       // Registration logic
       if (users.find(u => u.username === username.trim())) {
@@ -92,34 +91,62 @@ export default function LoginPage() {
       localStorage.setItem('currentUser', JSON.stringify(newUser))
       
       setSuccess('Регистрация успешна! Переход...')
-      setTimeout(() => router.push('/quiz'), 1000)
+      setTimeout(() => router.push('/map'), 1000)
     }
   }
 
   return (
     <main className="container">
-      <div className="card text-center">
-        <div style={{ marginBottom: '1rem' }}>
+      <div className="card text-center" style={{ maxWidth: '450px' }}>
+        <div style={{ marginBottom: '2rem' }}>
           <Image 
             src="/logo.png" 
             alt="MemeLand Logo" 
-            width={200} 
-            height={130}
-            style={{ maxWidth: '100%', height: 'auto' }}
+            width={180} 
+            height={120}
+            style={{ maxWidth: '100%', height: 'auto', filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.5))' }}
             priority
           />
         </div>
-        <h2 style={{ marginBottom: '1rem', color: '#7c3aed' }}>
-          {isLogin ? '👋 Вход' : '✨ Регистрация'}
-        </h2>
-        <p style={{ marginBottom: '1.5rem' }}>
-          {isLogin 
-            ? 'Введите имя пользователя и пароль для входа.' 
-            : 'Создайте аккаунт, чтобы начать обучение.'}
+        <h1 style={{ marginBottom: '0.5rem', fontSize: '1.75rem' }}>
+          {isLogin ? 'Добро пожаловать' : 'Создать аккаунт'}
+        </h1>
+        <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '1.5rem' }}>
+          {isLogin ? 'Войдите, чтобы продолжить обучение' : 'Начните изучать язык через мемы'}
         </p>
 
-        {error && <p className="error-msg">{error}</p>}
-        {success && <p className="success-msg">{success}</p>}
+        {error && (
+          <div style={{ 
+            background: 'rgba(244, 63, 94, 0.2)', 
+            border: '1px solid rgba(244, 63, 94, 0.4)',
+            borderRadius: '0.75rem',
+            padding: '0.75rem',
+            marginBottom: '1rem',
+            color: '#f43f5e'
+          }}>
+            <svg style={{ width: '16px', height: '16px', marginRight: '0.5rem', display: 'inline' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            {error}
+          </div>
+        )}
+        {success && (
+          <div style={{ 
+            background: 'rgba(16, 185, 129, 0.2)', 
+            border: '1px solid rgba(16, 185, 129, 0.4)',
+            borderRadius: '0.75rem',
+            padding: '0.75rem',
+            marginBottom: '1rem',
+            color: '#10b981'
+          }}>
+            <svg style={{ width: '16px', height: '16px', marginRight: '0.5rem', display: 'inline' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            {success}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -154,15 +181,22 @@ export default function LoginPage() {
                 value={level}
                 onChange={(e) => setLevel(e.target.value)}
               >
-                <option value="beginner">🌱 Начальный - Базовый словарь</option>
-                <option value="intermediate">📚 Средний - Обычные выражения</option>
-                <option value="advanced">🎯 Продвинутый - Сленг и сложные фразы</option>
+                <option value="beginner">Начальный - Базовый словарь</option>
+                <option value="intermediate">Средний - Обычные выражения</option>
+                <option value="advanced">Продвинутый - Сленг и сложные фразы</option>
               </select>
             </div>
           )}
 
           <button type="submit" className="btn" style={{ width: '100%', marginTop: '1rem' }}>
-            {isLogin ? '🚀 Войти' : '✨ Зарегистрироваться'}
+            <svg style={{ width: '18px', height: '18px' }} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {isLogin ? (
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"></path>
+              ) : (
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M8 7a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm14 7l-4-4m0 0l-4 4m4-4v12"></path>
+              )}
+            </svg>
+            <span>{isLogin ? 'Войти' : 'Зарегистрироваться'}</span>
           </button>
         </form>
 
@@ -176,13 +210,7 @@ export default function LoginPage() {
           </button>
         </div>
 
-        <div style={{ marginTop: '1rem' }}>
-          <Link href="/" className="btn btn-secondary" style={{ fontSize: '0.875rem' }}>
-            🏠 На главную
-          </Link>
-        </div>
-
-        <p style={{ marginTop: '1rem', fontSize: '0.75rem', color: '#9333ea' }}>
+        <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
           Админ: admin / admin123
         </p>
       </div>

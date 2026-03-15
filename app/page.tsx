@@ -1,7 +1,26 @@
-import Link from 'next/link'
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
 export default function Home() {
+  const router = useRouter()
+
+  useEffect(() => {
+    const currentUser = localStorage.getItem('currentUser')
+    if (currentUser) {
+      const user = JSON.parse(currentUser)
+      if (user.isAdmin) {
+        router.push('/admin')
+      } else {
+        router.push('/map')
+      }
+    } else {
+      router.push('/login')
+    }
+  }, [router])
+
   return (
     <main className="container">
       <div className="card text-center">
@@ -20,12 +39,9 @@ export default function Home() {
         </p>
         
         <div className="flex flex-wrap gap-2" style={{ justifyContent: 'center' }}>
-          <Link href="/login" className="btn">
+          <button onClick={() => router.push('/login')} className="btn">
             🚀 Начать обучение
-          </Link>
-          <Link href="/constructor" className="btn btn-secondary">
-            ➕ Добавить мем
-          </Link>
+          </button>
         </div>
 
         <div style={{ marginTop: '2rem', padding: '1rem', background: '#f5f3ff', borderRadius: '0.5rem' }}>

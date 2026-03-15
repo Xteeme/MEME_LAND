@@ -2,6 +2,7 @@
   {
     "id": 1,
     "level": "beginner",
+    "quizLevel": 1,
     "image": "/photos/bird.jpg",
     "correctWord": "bird",
     "sentence": "Look at that cute ___ in the tree!",
@@ -10,6 +11,7 @@
   {
     "id": 2,
     "level": "beginner",
+    "quizLevel": 1,
     "image": "/photos/cat.jpg",
     "correctWord": "cat",
     "sentence": "My ___ loves to sleep all day.",
@@ -18,6 +20,7 @@
   {
     "id": 3,
     "level": "beginner",
+    "quizLevel": 1,
     "image": "/photos/frog.jpg",
     "correctWord": "frog",
     "sentence": "The green ___ jumps into the water.",
@@ -26,9 +29,146 @@
   {
     "id": 4,
     "level": "intermediate",
+    "quizLevel": 1,
     "image": "/photos/pirate.jpg",
     "correctWord": "pirate",
     "sentence": "The ___ sailed the seven seas looking for treasure.",
     "options": ["pirate", "sailor", "captain", "fisherman"]
+  },
+  {
+    "id": 5,
+    "level": "beginner",
+    "quizLevel": 2,
+    "image": "/photos/monkey.jpg",
+    "correctWord": "monkey",
+    "sentence": "The funny ___ is eating a banana.",
+    "options": ["monkey", "ape", "gorilla", "bear"]
+  },
+  {
+    "id": 6,
+    "level": "beginner",
+    "quizLevel": 2,
+    "image": "/photos/rabbit.jpg",
+    "correctWord": "rabbit",
+    "sentence": "The fluffy ___ hops in the garden.",
+    "options": ["rabbit", "bunny", "hare", "mouse"]
+  },
+  {
+    "id": 7,
+    "level": "intermediate",
+    "quizLevel": 2,
+    "image": "/photos/smoking.jpg",
+    "correctWord": "smoking",
+    "sentence": "No ___ is allowed in this building.",
+    "options": ["smoking", "eating", "drinking", "running"]
+  },
+  {
+    "id": 8,
+    "level": "intermediate",
+    "quizLevel": 2,
+    "image": "/photos/summer.jpg",
+    "correctWord": "summer",
+    "sentence": "I love going to the beach in ___.",
+    "options": ["summer", "winter", "spring", "autumn"]
+  },
+  {
+    "id": 9,
+    "level": "beginner",
+    "quizLevel": 3,
+    "image": "/photos/bus.jpg",
+    "correctWord": "bus",
+    "translation": "автобус",
+    "sentence": "I take the ___ to school every morning.",
+    "options": ["bus", "car", "train", "bike"]
+  },
+  {
+    "id": 10,
+    "level": "beginner",
+    "quizLevel": 3,
+    "image": "/photos/car.jpg",
+    "correctWord": "car",
+    "translation": "машина",
+    "sentence": "My father drives a red ___.",
+    "options": ["car", "bus", "truck", "van"]
+  },
+  {
+    "id": 11,
+    "level": "beginner",
+    "quizLevel": 3,
+    "image": "/photos/friend.jpg",
+    "correctWord": "friend",
+    "translation": "друг",
+    "sentence": "My best ___ lives next door.",
+    "options": ["friend", "neighbor", "cousin", "brother"]
+  },
+  {
+    "id": 12,
+    "level": "intermediate",
+    "quizLevel": 3,
+    "image": "/photos/medicine.jpg",
+    "correctWord": "medicine",
+    "translation": "лекарство",
+    "sentence": "You should take this ___ three times a day.",
+    "options": ["medicine", "vitamin", "pill", "syrup"]
+  },
+  {
+    "id": 13,
+    "level": "beginner",
+    "quizLevel": 4,
+    "image": "/photos/grandma.jpg",
+    "correctWord": "grandma",
+    "translation": "бабушка",
+    "sentence": "My ___ bakes the best cookies.",
+    "options": ["grandma", "mom", "aunt", "sister"]
+  },
+  {
+    "id": 14,
+    "level": "intermediate",
+    "quizLevel": 4,
+    "image": "/photos/earth.jpg",
+    "correctWord": "earth",
+    "translation": "земля",
+    "sentence": "We must protect our planet ___.",
+    "options": ["earth", "world", "globe", "land"]
+  },
+  {
+    "id": 15,
+    "level": "intermediate",
+    "quizLevel": 4,
+    "image": "/photos/circle.jpg",
+    "correctWord": "circle",
+    "translation": "круг",
+    "sentence": "Draw a perfect ___ on the paper.",
+    "options": ["circle", "square", "triangle", "line"]
+  },
+  {
+    "id": 16,
+    "level": "advanced",
+    "quizLevel": 4,
+    "image": "/photos/always.jpg",
+    "correctWord": "always",
+    "translation": "всегда",
+    "sentence": "She is ___ on time for work.",
+    "options": ["always", "never", "sometimes", "rarely"]
+  },
+  {
+    "id": 17,
+    "level": "intermediate",
+    "quizLevel": 5,
+    "image": "/photos/today.jpg",
+    "correctWord": "today",
+    "translation": "сегодня",
+    "sentence": "The weather is beautiful ___.",
+    "options": ["today", "tomorrow", "yesterday", "tonight"]
+  },
+  {
+    "id": 18,
+    "level": "intermediate",
+    "quizLevel": 5,
+    "image": "/photos/again.jpg",
+    "correctWord": "again",
+    "translation": "снова",
+    "sentence": "Can you say that ___, please?",
+    "options": ["again", "louder", "slower", "clearly"]
   }
 ]

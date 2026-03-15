@@ -109,12 +109,12 @@ export default function AdminPage() {
   return (
     <main className="container">
       <div className="card card-wide">
-        <div className="text-center" style={{ marginBottom: '1rem' }}>
+        <div className="text-center" style={{ marginBottom: '0.5rem' }}>
           <Image 
             src="/logo.png" 
             alt="MemeLand Logo" 
-            width={150} 
-            height={100}
+            width={120} 
+            height={80}
             style={{ maxWidth: '100%', height: 'auto' }}
           />
         </div>
