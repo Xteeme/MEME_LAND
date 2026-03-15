@@ -47,6 +47,10 @@ body {
   background-attachment: fixed;
   color: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 .container {
@@ -55,6 +59,9 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .card {
@@ -70,6 +77,9 @@ body {
   border: 1px solid rgba(139, 92, 246, 0.3);
   backdrop-filter: blur(20px);
   position: relative;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card::before {
@@ -84,6 +94,7 @@ body {
 
 .card-wide {
   max-width: 900px;
+  width: 100%;
 }
 
 h1 {
@@ -665,22 +676,48 @@ label {
 
 /* Mobile Quiz Optimizations */
 @media (max-width: 480px) {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  
   .container {
     padding: 0.25rem;
     align-items: flex-start;
     padding-top: 0.5rem;
+    width: 100% !important;
+    max-width: 100vw !important;
   }
   
   .card {
     padding: 0.75rem;
     border-radius: 0.75rem;
-    max-width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  .card-wide {
+    max-width: 100% !important;
+    width: 100% !important;
   }
   
   /* Reduce logo size on mobile */
   .card img[src*="logo.png"] {
     width: 60px !important;
     height: 40px !important;
+    max-width: 100% !important;
+  }
+  
+  /* Ensure all images don't overflow */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
   }
   
   /* Compact header elements */
@@ -723,12 +760,16 @@ label {
     max-height: 200px !important;
     border-radius: 0.5rem !important;
     margin-bottom: 0.75rem !important;
+    width: 100% !important;
+    object-fit: contain !important;
   }
   
   /* Compact sentence and translation */
   .card > p {
     font-size: 1rem !important;
     margin-bottom: 0.5rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
   }
   
   .card > p + p {
@@ -741,12 +782,15 @@ label {
     grid-template-columns: 1fr !important;
     gap: 0.5rem !important;
     margin-bottom: 0.75rem !important;
+    width: 100% !important;
   }
   
   .card > div[style*="grid-template-columns"] button {
     padding: 0.75rem 1rem !important;
     font-size: 0.9rem !important;
     min-height: 50px !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
   }
   
   /* Compact hint */
@@ -757,6 +801,7 @@ label {
   .card > div.text-center button {
     font-size: 0.75rem !important;
     padding: 0.5rem 0.75rem !important;
+    max-width: 100% !important;
   }
   
   .card > div.text-center + div {
@@ -773,6 +818,7 @@ label {
   .modal {
     padding: 1.25rem !important;
     width: 95% !important;
+    max-width: 95% !important;
   }
   
   .modal h2 {
@@ -792,6 +838,7 @@ label {
   .card > div[style*="flex-direction: column"] button {
     font-size: 0.85rem !important;
     padding: 0.75rem 1rem !important;
+    width: 100% !important;
   }
   
   /* Session complete screen optimizations */
@@ -810,6 +857,7 @@ label {
   .stats-grid > div {
     padding: 0.75rem !important;
     border-radius: 0.5rem !important;
+    min-width: 0 !important;
   }
   
   .stats-grid > div > div:first-child {
@@ -823,6 +871,7 @@ label {
   /* Improve button touch targets on mobile */
   .btn, .glow-btn {
     min-height: 44px !important;
+    max-width: 100% !important;
   }
   
   /* Optimize tabs for mobile - horizontal scroll if needed */
@@ -830,11 +879,26 @@ label {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     justify-content: flex-start !important;
+    width: 100% !important;
   }
   
   .tab {
     white-space: nowrap;
     flex-shrink: 0;
+  }
+  
+  /* Fix flex containers */
+  .flex,
+  [style*="display: flex"] {
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+  }
+  
+  /* Fix all text elements */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
   }
 }
 
