@@ -928,6 +928,28 @@ label {
     animation: slideDown 0.3s ease;
   }
   
+  /* Ensure glow-btn styles work in mobile menu */
+  .mobile-menu .glow-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  .mobile-menu .glow-btn svg {
+    transition: transform 0.3s ease !important;
+  }
+  
+  .mobile-menu .glow-btn:hover svg {
+    transform: scale(1.1) !important;
+  }
+  
   @keyframes slideDown {
     from {
       opacity: 0;

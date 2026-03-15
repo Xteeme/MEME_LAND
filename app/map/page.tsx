@@ -213,29 +213,43 @@ export default function MapPage() {
           top: '60px',
           left: 0,
           right: 0,
-          background: '#37464f',
-          boxShadow: '0 4px 0 #202f36',
+          background: 'linear-gradient(135deg, rgba(30, 20, 60, 0.98) 0%, rgba(20, 15, 40, 0.98) 100%)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
           zIndex: 99,
           padding: '1rem',
           display: 'flex',
           flexDirection: 'column',
           gap: '0.75rem',
-          borderBottom: '2px solid #8b5cf6'
+          borderBottom: '2px solid rgba(139, 92, 246, 0.5)',
+          backdropFilter: 'blur(20px)',
+          borderTop: '1px solid rgba(139, 92, 246, 0.3)'
         }} className="mobile-menu">
-          <Link href="/survival" className="glow-btn glow-btn-red" style={{ justifyContent: 'center' }}>
+          <Link href="/survival" className="glow-btn glow-btn-red" style={{ 
+            justifyContent: 'center',
+            width: '100%',
+            padding: '0.875rem 1.5rem'
+          }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
             <span>Выживание</span>
           </Link>
-          <Link href="/dictionary" className="glow-btn glow-btn-green" style={{ justifyContent: 'center' }}>
+          <Link href="/dictionary" className="glow-btn glow-btn-green" style={{ 
+            justifyContent: 'center',
+            width: '100%',
+            padding: '0.875rem 1.5rem'
+          }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
             <span>Словарь</span>
           </Link>
-          <Link href="/errors" className="glow-btn glow-btn-orange" style={{ justifyContent: 'center' }}>
+          <Link href="/errors" className="glow-btn glow-btn-orange" style={{ 
+            justifyContent: 'center',
+            width: '100%',
+            padding: '0.875rem 1.5rem'
+          }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="8" x2="12" y2="12"></line>
@@ -243,14 +257,22 @@ export default function MapPage() {
             </svg>
             <span>Ошибки</span>
           </Link>
-          <Link href="/profile" className="glow-btn glow-btn-white" style={{ justifyContent: 'center' }}>
+          <Link href="/profile" className="glow-btn glow-btn-white" style={{ 
+            justifyContent: 'center',
+            width: '100%',
+            padding: '0.875rem 1.5rem'
+          }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
             <span>Профиль</span>
           </Link>
-          <button onClick={logout} className="glow-btn" style={{ justifyContent: 'center' }}>
+          <button onClick={logout} className="glow-btn" style={{ 
+            justifyContent: 'center',
+            width: '100%',
+            padding: '0.875rem 1.5rem'
+          }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" style={{ width: '20px', height: '20px' }}>
               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
               <polyline points="16 17 21 12 16 7"></polyline>
